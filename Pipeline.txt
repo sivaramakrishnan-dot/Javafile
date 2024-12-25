@@ -8,7 +8,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Hello World'
-                git branch: 'main', url: 'https://github.com/dines14-coder/java-app.git'   
+                git branch: 'main', url: 'https://github.com/sivaramakrishnan-dot/Javafile.git'   
             }
         }
     
@@ -26,7 +26,7 @@ pipeline {
     
         stage('BuildImage and push') {
             environment {
-                DOCKER_IMAGE = ""
+                DOCKER_IMAGE = "sivaramakrishnan12345/javafile:${BUILD_NUMBER}"
                 REGISTRY_CREDENTIALS = credentials('docker-cred')
             }
             steps {
